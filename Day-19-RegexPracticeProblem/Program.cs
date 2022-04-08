@@ -11,8 +11,9 @@ namespace Day_19_RegexPracticeProblem
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Regular Expression");
-            string FirstName = Console.ReadLine();
-            Validation.FirstNameValidation(FirstName);
+            Console.WriteLine("Enter your first name");
+            string FirstName = Console.ReadLine(); // Creating user input for first name
+            Validation.FirstNameValidation(FirstName); //Calling method to validate firstname
 
 
         }
