@@ -15,6 +15,9 @@ namespace Day_19_RegexPracticeProblem
             string FirstName = Console.ReadLine(); // Creating user input for first name
             Validation.FirstNameValidation(FirstName);////Calling method to validate firstname
 
+            Console.WriteLine("Enter your last name");
+            string LastName = Console.ReadLine(); // Creating user input for last name
+            Validation.LastNameValidation(LastName);////Calling method to validate lastname
 
         }
     }
