@@ -33,6 +33,17 @@ namespace Day_19_RegexPracticeProblem
                 Console.WriteLine("Invalid Name : " + LastName);
             }
         }
-
+        public static void EmailValidation(string Email)
+        {
+            string pattern = "^[0-9a-zA-Z]+[./+_-]{0,1}[0-9a-zA-Z]+[@][a-zA-Z0-9-]+[.][a-zA-Z]{2,}([.][a-zA-Z]{2,}){0,1}$"; // Creating REGEX pattern
+            if (Regex.IsMatch(Email, pattern)) //For checking regex are valid or invalid
+            {
+                Console.WriteLine("My email id is : " + Email);
+            }
+            else
+            {
+                Console.WriteLine("Invalid email : " + Email);
+            }
+        }
     }
 }
