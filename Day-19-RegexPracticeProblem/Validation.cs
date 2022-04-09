@@ -14,11 +14,11 @@ namespace Day_19_RegexPracticeProblem
             string pattern = "^[A-Z][a-z]{2,}$"; // Creating REGEX pattern
             if (Regex.IsMatch(FirstName, pattern)) //For checking regex are valid or invalid
             {
-                Console.WriteLine("The First name is : " +FirstName);
+                Console.WriteLine("The First name is : " + FirstName);
             }
             else
             {
-                Console.WriteLine("Invalid Name : "+FirstName);
+                Console.WriteLine("Invalid Name : " + FirstName);
             }
         }
         public static void LastNameValidation(string LastName)
@@ -43,6 +43,18 @@ namespace Day_19_RegexPracticeProblem
             else
             {
                 Console.WriteLine("Invalid email : " + Email);
+            }
+        }
+        public static void MobileNumberValidation(string Number)
+        {
+            string pattern = "^[0-9]{1,3}[ ][0-9]{10}$"; // Creating REGEX pattern
+            if (Regex.IsMatch(Number, pattern)) //For checking regex are valid or invalid
+            {
+                Console.WriteLine("My number id is : " + Number);
+            }
+            else
+            {
+                Console.WriteLine("Invalid number : " + Number);
             }
         }
     }
