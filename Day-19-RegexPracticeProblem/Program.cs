@@ -40,6 +40,7 @@ namespace Day_19_RegexPracticeProblem
             
             Console.WriteLine("Rule 1 : minimum 8 character");
             Console.WriteLine("Rule 2 : With one upper case");
+            Console.WriteLine("Rule 3 : atleast one numeric");
             Console.WriteLine("Enter your password : ");
             string pswd = Console.ReadLine();
             Validation.Password(pswd); //calling method
