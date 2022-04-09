@@ -37,9 +37,12 @@ namespace Day_19_RegexPracticeProblem
             //string number = Console.ReadLine(); // Creating user input for last name
             //Validation.MobileNumberValidation(number);////Calling method to validate lastname
 
+            
+            Console.WriteLine("Rule 1 : minimum 8 character");
+            Console.WriteLine("Rule 2 : With one upper case");
             Console.WriteLine("Enter your password : ");
             string pswd = Console.ReadLine();
-            Validation.Password(pswd);
+            Validation.Password(pswd); //calling method
         }
     }
 }
