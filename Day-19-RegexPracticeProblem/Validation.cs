@@ -57,5 +57,17 @@ namespace Day_19_RegexPracticeProblem
                 Console.WriteLine("Invalid number : " + Number);
             }
         }
+        public static void Password(string pswd)
+        {
+            string pattern = "^[a-z]{8}$"; // Creating REGEX pattern
+            if (Regex.IsMatch(pswd, pattern)) //For checking regex are valid or invalid
+            {
+                Console.WriteLine("My password id is : " + pswd);
+            }
+            else
+            {
+                Console.WriteLine("Invalid password : " + pswd);
+            }
+        }
     }
 }

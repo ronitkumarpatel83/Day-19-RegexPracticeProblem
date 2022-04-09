@@ -33,9 +33,13 @@ namespace Day_19_RegexPracticeProblem
             //   Validation.EmailValidation(emails);
             //}
 
-            Console.WriteLine("Enter your mobile Number with country code : ");
-            string number = Console.ReadLine(); // Creating user input for last name
-            Validation.MobileNumberValidation(number);////Calling method to validate lastname
+            //Console.WriteLine("Enter your mobile Number with country code : ");
+            //string number = Console.ReadLine(); // Creating user input for last name
+            //Validation.MobileNumberValidation(number);////Calling method to validate lastname
+
+            Console.WriteLine("Enter your password : ");
+            string pswd = Console.ReadLine();
+            Validation.Password(pswd);
         }
     }
 }
