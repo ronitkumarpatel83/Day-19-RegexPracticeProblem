@@ -59,7 +59,7 @@ namespace Day_19_RegexPracticeProblem
         }
         public static void Password(string pswd)
         {
-            string pattern = "^([A-Za-z0-9]{8,30})[@]$"; // Creating REGEX pattern
+            string pattern = "^((?=.{8,}$)(?=.*[0-9])(?=.*[A-Z])[A-Za-z0-9]{0,30}?[@~!#$%^&+*]{1}[a-zA-Z0-9]{0,30})$"; // Creating REGEX pattern
             if (Regex.IsMatch(pswd, pattern)) //For checking regex are valid or invalid
             {
                 Console.WriteLine("My password id is : " + pswd);
