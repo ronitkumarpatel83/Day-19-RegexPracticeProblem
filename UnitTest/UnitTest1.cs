@@ -8,27 +8,41 @@ namespace UnitTest
     public class UnitTest1
     {
         [TestMethod]
-        public void FirstName()
+        //Checking for multiple first name
+        [DataRow("kkkkk", "Invalid")]
+        [DataRow("RKP", "Invalid")]
+        [DataRow("Ronit", "Valid")]
+        public void GivenFirstNameValidation(string firstName, string expected) // Testing for Firstname Validation
         {
-            //Arrange
-            string expected = "Valid";
-            string massage = "Ronit";
-            //Act
-            string actual = Validation.FirstNameValidation(massage);
-            //Assert
-            Assert.AreEqual(expected, actual);
-
+            try
+            {
+                //Act
+                string actual = Validation.FirstNameValidation(firstName);
+                //Assert
+                Assert.AreEqual(expected, actual);
+            }
+            catch (CustomException ex) // catch exception if input is not valid or null or empty
+            {
+                Assert.AreEqual(expected, ex.Message);
+            }
         }
         [TestMethod]
-        public void LastName()
+        [DataRow("kkkkk", "Invalid")]
+        [DataRow("RKP", "Invalid")]
+        [DataRow("Patel", "Valid")]
+        public void GivenLastNameValidation(string lastName, string expected) // Testing for Firstname Validation
         {
-            //Arrange
-            string expected = "Valid";
-            string massage = "Patel";
-            //Act
-            string actual = Validation.LastNameValidation(massage);
-            //Assert
-            Assert.AreEqual(expected, actual);
+            try
+            {
+                //Act
+                string actual = Validation.LastNameValidation(lastName);
+                //Assert
+                Assert.AreEqual(expected, actual);
+            }
+            catch (CustomException ex) // catch exception if input is not valid or null or empty
+            {
+                Assert.AreEqual(expected, ex.Message);
+            }
         }
         /// <summary>
         /// Emails the validation.
@@ -61,35 +75,54 @@ namespace UnitTest
         [DataRow("abc@gmail.com.aa.au", "Invalid")]
         public void EmailValidation(string email,string expected)
         {
-            //Act
-            string actual = Validation.EmailValidation(email);
-            //Assert
-            Assert.AreEqual(expected, actual);
+            try
+            {
+                //Act
+                string actual = Validation.EmailValidation(email);
+                //Assert
+                Assert.AreEqual(expected, actual);
+            }
+            catch (CustomException ex) // catch exception if input is not valid or null or empty
+            {
+                Assert.AreEqual(expected, ex.Message);
+            }
         }
         [TestMethod]
-        public void MobileNumber()
+        [DataRow("5486514965", "Invalid")]
+        [DataRow("91 7008427274", "Valid")]
+        [DataRow("54863546564", "Invalid")]
+        public void MobileNumber(string number, string expected)
         {
-            //Arrange
-            string expected = "Valid";
-            string massage = "91 7008427274";
-            //Act
-            string actual = Validation.MobileNumberValidation(massage);
-            //Assert
-            Assert.AreEqual(expected, actual);
+            try
+            {
+                //Act
+                string actual = Validation.MobileNumberValidation(number);
+                //Assert
+                Assert.AreEqual(expected, actual);
+            }
+            catch(CustomException ex)
+            {
+                Assert.AreEqual(expected, ex.Message);
+            }
 
         }
         [TestMethod]
-        public void Password()
+        [DataRow("PassWord@1342","Valid")]
+        [DataRow("PassWord2324", "Invalid")]
+        [DataRow("PassWord", "Invalid")]
+        public void Password(string pass, string expected)
         {
-            //Arrange
-            string expected = "Valid";
-            string massage = "India@12345";
-            //Act
-            string actual = Validation.Password(massage);
-            //Assert
-            Assert.AreEqual(expected, actual);
-
+            try
+            {
+                //Act
+                string actual = Validation.Password(pass);
+                //Assert
+                Assert.AreEqual(expected, actual);
+            }
+            catch(CustomException ex)
+            {
+                Assert.AreEqual (expected, ex.Message);
+            }
         }
-
     }
 }
