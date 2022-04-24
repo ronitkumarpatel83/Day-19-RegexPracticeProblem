@@ -9,12 +9,13 @@ namespace Day_19_RegexPracticeProblem
 {
     public class Validation
     {
+        static Func<string, string, bool> patternsMatching = (x, y) => Regex.IsMatch(x, y);
         public static string FirstNameValidation(string FirstName)
         {
             try
             {
                 string pattern = "^[A-Z][a-z]{2,}$"; // Creating REGEX pattern
-                if (Regex.IsMatch(FirstName, pattern)) //For checking regex are valid or invalid
+                if (patternsMatching(FirstName, pattern)) //For checking regex are valid or invalid
                 {
                     Console.WriteLine("The First name is : " + FirstName);
                     return "Valid";
@@ -35,7 +36,7 @@ namespace Day_19_RegexPracticeProblem
             try
             {
                 string pattern = "^[A-Z][a-z]{2,}$"; // Creating REGEX pattern
-                if (Regex.IsMatch(LastName, pattern)) //For checking regex are valid or invalid
+                if (patternsMatching(LastName, pattern)) //For checking regex are valid or invalid
                 {
                     Console.WriteLine("The First name is : " + LastName);
                     return "Valid";
@@ -56,7 +57,7 @@ namespace Day_19_RegexPracticeProblem
             try
             {
                 string pattern = "^[0-9a-zA-Z]+[./+_-]{0,1}[0-9a-zA-Z]+[@][a-zA-Z0-9-]+[.][a-zA-Z]{2,}([.][a-zA-Z]{2,}){0,1}$"; // Creating REGEX pattern
-                if (Regex.IsMatch(Email, pattern)) //For checking regex are valid or invalid
+                if (patternsMatching(Email, pattern)) //For checking regex are valid or invalid
                 {
                     Console.WriteLine("My email id is : " + Email);
                     return "Valid";
@@ -70,7 +71,6 @@ namespace Day_19_RegexPracticeProblem
             {
                 Console.WriteLine(ex.Message);
                 return ex.Message;
-
             }
         }
         public static string MobileNumberValidation(string Number)
@@ -78,7 +78,7 @@ namespace Day_19_RegexPracticeProblem
             try
             {
                 string pattern = "^[0-9]{1,3}[ ][0-9]{10}$"; // Creating REGEX pattern
-                if (Regex.IsMatch(Number, pattern)) //For checking regex are valid or invalid
+                if (patternsMatching(Number, pattern)) //For checking regex are valid or invalid
                 {
                     Console.WriteLine("My number id is : " + Number);
                     return "Valid";
@@ -92,7 +92,6 @@ namespace Day_19_RegexPracticeProblem
             {
                 Console.WriteLine(ex.Message);
                 return ex.Message;
-
             }
         }
         public static string Password(string pswd)
@@ -101,7 +100,7 @@ namespace Day_19_RegexPracticeProblem
             {
                 string pattern = "^((?=.{8,}$)(?=.*[0-9])(?=.*[A-Z])[A-Za-z0-9]{0,30}?[@~!#$%^&+*]{1}[a-zA-Z0-9]{0,30})$"; // Creating REGEX pattern
 
-                if (Regex.IsMatch(pswd, pattern)) //For checking regex are valid or invalid
+                if (patternsMatching(pswd, pattern)) //For checking regex are valid or invalid
                 {
                     Console.WriteLine("My password id is : " + pswd);
                     return "Valid";
@@ -116,7 +115,6 @@ namespace Day_19_RegexPracticeProblem
                 Console.WriteLine(ex.Message);
                 return ex.Message;
             }
-
         }
     }
 }
